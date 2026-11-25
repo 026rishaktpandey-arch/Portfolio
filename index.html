@@ -1,1 +1,182 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>NEXUS | Suraj Srivastava</title>
+  <meta name="description" content="Portfolio of Suraj Srivastava: AI, data science and web development.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;600;800&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Opening sequence -->
+  <div class="loader" id="loader">
+    <div class="signal" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p class="loader-text">INITIALIZING PERSONAL UNIVERSE</p>
+    <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+    <h2 class="loader-logo" aria-label="NEXUS">
+      <span>N</span><span>E</span><span>X</span><span>U</span><span>S</span>
+    </h2>
+    <button class="skip" id="skip" type="button">Skip intro</button>
+  </div>
+
+  <!-- Atmosphere -->
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="glow" id="glow" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home">NEXUS</a>
+    <p class="status"><span class="dot" aria-hidden="true"></span> Open to projects <time id="clock"></time></p>
+  </header>
+
+  <main>
+    <!-- 00 Home -->
+    <section class="panel is-active" id="home" tabindex="-1" aria-label="Introduction">
+      <p class="kicker">Beyond the Interface.</p>
+      <h1 class="name" id="name">SURAJ SRIVASTAVA</h1>
+      <p class="intro">I build AI tools, data products and web experiences, and I care most about the moment a messy problem turns into something people can actually use.</p>
+    </section>
+
+    <!-- 01 Identity -->
+    <section class="panel" id="identity" tabindex="-1" aria-labelledby="identity-h">
+      <h2 class="panel-title" id="identity-h">Identity</h2>
+      <article class="card" data-tilt>
+        <dl class="facts">
+          <div><dt>Name</dt><dd>Suraj Srivastava</dd></div>
+          <div><dt>Education</dt><dd>B.Tech, Computer Science Engineering</dd></div>
+          <div><dt>Specialization</dt><dd>Data Science and Artificial Intelligence</dd></div>
+          <div><dt>Status</dt><dd>Second-year undergraduate</dd></div>
+        </dl>
+        <p class="reveal-text">I am drawn to the places where software meets real decisions: a model that explains its answer, a dataset that reveals a pattern, a small tool that saves someone an hour.</p>
+        <ul class="chips" aria-label="Interests">
+          <li>Programming</li><li>Artificial Intelligence</li><li>Web Development</li><li>Problem Solving</li><li>Practical digital products</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- 02 Journey -->
+    <section class="panel" id="journey" tabindex="-1" aria-labelledby="journey-h">
+      <h2 class="panel-title" id="journey-h">Journey</h2>
+      <ol class="timeline">
+        <li class="reveal">
+          <h3>B.Tech, Computer Science Engineering</h3>
+          <p>Current degree. Second-year undergraduate.</p>
+        </li>
+        <li class="reveal">
+          <h3>Specialization: Data Science and AI</h3>
+          <p>Building foundations in data analysis, machine learning and applied AI.</p>
+        </li>
+        <li class="reveal">
+          <h3>[Milestone: add a date and title]</h3>
+          <p>[Describe a learning or development milestone here.]</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 03 Capabilities -->
+    <section class="panel" id="capabilities" tabindex="-1" aria-labelledby="cap-h">
+      <h2 class="panel-title" id="cap-h">Capabilities</h2>
+      <div class="constellation" id="constellation">
+        <div class="cluster" data-cluster>
+          <h3>Programming</h3>
+          <ul><li>C</li><li>C++</li><li>Python</li><li>JavaScript</li></ul>
+        </div>
+        <div class="cluster" data-cluster>
+          <h3>Web Development</h3>
+          <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React.js</li></ul>
+        </div>
+        <div class="cluster" data-cluster>
+          <h3>Tools</h3>
+          <ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>Excel</li></ul>
+        </div>
+        <div class="cluster" data-cluster>
+          <h3>AI and Data</h3>
+          <ul><li>Artificial Intelligence</li><li>Data Science</li><li>Python-based development</li></ul>
+        </div>
+      </div>
+      <p class="note">Hover a cluster to isolate it. No proficiency levels are shown.</p>
+    </section>
+
+    <!-- 04 Project archive -->
+    <section class="panel" id="archive" tabindex="-1" aria-labelledby="archive-h">
+      <h2 class="panel-title" id="archive-h">Project Archive</h2>
+      <ul class="archive">
+        <li>
+          <button class="project magnetic" type="button" data-project="smart">
+            <span class="project-name">Smart Student Companion</span>
+            <span class="project-type">AI study platform</span>
+          </button>
+        </li>
+        <li>
+          <button class="project magnetic" type="button" data-project="medikiosk">
+            <span class="project-name">MediKiosk</span>
+            <span class="project-type">Clinical intake concept</span>
+          </button>
+        </li>
+        <li>
+          <button class="project magnetic" type="button" data-project="portfolio">
+            <span class="project-name">Personal Portfolio</span>
+            <span class="project-type">Experimental developer site</span>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 05 Connect -->
+    <section class="panel" id="connect" tabindex="-1" aria-labelledby="connect-h">
+      <h2 class="panel-title" id="connect-h">Connect</h2>
+      <div class="terminal">
+        <p class="term-heading" id="termHeading" aria-live="polite"></p>
+        <ul class="links">
+          <li><a class="magnetic" href="mailto:your.email@example.com">your.email@example.com <small>[placeholder]</small></a></li>
+          <li><a class="magnetic" href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub <small>[placeholder]</small></a></li>
+          <li><a class="magnetic" href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn <small>[placeholder]</small></a></li>
+        </ul>
+        <form class="msg" id="msgForm" novalidate>
+          <label>Name <input name="name" type="text" required autocomplete="name"></label>
+          <label>Email <input name="email" type="email" required autocomplete="email"></label>
+          <label>Message <textarea name="message" rows="4" required></textarea></label>
+          <button class="magnetic send" type="submit">Send transmission</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating command dock -->
+  <nav class="dock" aria-label="Sections">
+    <a href="#home" data-target="home">Home</a>
+    <a href="#identity" data-target="identity">Identity</a>
+    <a href="#journey" data-target="journey">Journey</a>
+    <a href="#capabilities" data-target="capabilities">Capabilities</a>
+    <a href="#archive" data-target="archive">Archive</a>
+    <a href="#connect" data-target="connect">Connect</a>
+  </nav>
+
+  <!-- Project overlay -->
+  <div class="overlay" id="overlay" hidden>
+    <div class="overlay-inner" role="dialog" aria-modal="true" aria-labelledby="pTitle">
+      <button class="close" id="closeProject" type="button">Close</button>
+      <p class="p-type" id="pType"></p>
+      <h2 id="pTitle"></h2>
+      <p class="p-desc" id="pDesc"></p>
+      <h3>Features</h3>
+      <ul class="p-features" id="pFeatures"></ul>
+      <h3>Stack</h3>
+      <p id="pStack" class="p-stack"></p>
+      <div class="p-links">
+        <span>Live demo: [add link]</span>
+        <span>GitHub: [add link]</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
