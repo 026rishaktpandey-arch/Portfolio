@@ -3,7 +3,7 @@
 .char { display: inline-block; opacity: 0; transform: translateY(0.6em); }
 .hero-name .line .char { will-change: transform, opacity; }
 
-/* Mobile: static layout without pinned horizontal scroll */
+
 .experiments.is-static .experiments-track { width: auto; flex-direction: column; align-items: stretch; padding: 0 6vw; }
 .experiments.is-static .exhibit { width: 100%; }
 
