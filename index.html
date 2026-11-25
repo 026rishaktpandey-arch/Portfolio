@@ -1,182 +1,231 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>NEXUS | Suraj Srivastava</title>
-  <meta name="description" content="Portfolio of Suraj Srivastava: AI, data science and web development.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;600;800&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Rishakt Pandey | The Digital Universe</title>
+  <meta name="description" content="Enter the digital universe of Rishakt Pandey, a B.Tech CSE (Data Science & AI) student from Lucknow, India.">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
-<body>
+<body class="intro-active">
 
-  <!-- Opening sequence -->
-  <div class="loader" id="loader">
-    <div class="signal" aria-hidden="true"><span></span><span></span><span></span></div>
-    <p class="loader-text">INITIALIZING PERSONAL UNIVERSE</p>
-    <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
-    <h2 class="loader-logo" aria-label="NEXUS">
-      <span>N</span><span>E</span><span>X</span><span>U</span><span>S</span>
-    </h2>
-    <button class="skip" id="skip" type="button">Skip intro</button>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <p class="no-webgl-note" id="noWebgl" hidden>The 3D background needs WebGL, which this browser doesn't support. Everything else still works.</p>
+
+  <!-- Cinematic intro -->
+  <div class="intro" id="intro">
+    <div class="intro-glow" id="introGlow" aria-hidden="true"></div>
+    <div class="intro-content">
+      <p class="intro-initials" id="introInitials" aria-label="RP">
+        <span>R</span><span>P</span>
+      </p>
+      <p class="intro-title" id="introTitle">ENTER MY WORLD.</p>
+      <button class="enter-btn magnetic" id="enterBtn" type="button">Enter</button>
+    </div>
+    <button class="skip-btn" id="skipBtn" type="button">Skip intro</button>
   </div>
 
-  <!-- Atmosphere -->
-  <canvas id="field" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="glow" id="glow" aria-hidden="true"></div>
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <!-- Command navigation -->
+  <nav class="command-nav" id="commandNav" aria-label="Primary">
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navList">Menu</button>
+    <ul class="nav-list" id="navList">
+      <li><a href="#introduction" class="nav-item" data-scene="introduction"><span>01</span> Introduction</a></li>
+      <li><a href="#identity" class="nav-item" data-scene="identity"><span>02</span> Identity</a></li>
+      <li><a href="#capabilities" class="nav-item" data-scene="capabilities"><span>03</span> Capabilities</a></li>
+      <li><a href="#experiments" class="nav-item" data-scene="experiments"><span>04</span> Experiments</a></li>
+      <li><a href="#journey" class="nav-item" data-scene="journey"><span>05</span> Journey</a></li>
+      <li><a href="#contact" class="nav-item" data-scene="contact"><span>06</span> Contact</a></li>
+    </ul>
+  </nav>
 
-  <header class="topbar">
-    <a class="brand" href="#home">NEXUS</a>
-    <p class="status"><span class="dot" aria-hidden="true"></span> Open to projects <time id="clock"></time></p>
-  </header>
+  <main id="main">
 
-  <main>
-    <!-- 00 Home -->
-    <section class="panel is-active" id="home" tabindex="-1" aria-label="Introduction">
-      <p class="kicker">Beyond the Interface.</p>
-      <h1 class="name" id="name">SURAJ SRIVASTAVA</h1>
-      <p class="intro">I build AI tools, data products and web experiences, and I care most about the moment a messy problem turns into something people can actually use.</p>
+    <!-- 01 Introduction -->
+    <section class="scene hero" id="introduction" data-scene="introduction">
+      <div class="hero-text">
+        <h1 class="hero-name" aria-label="Rishakt Pandey">
+          <span class="line">RISHAKT</span>
+          <span class="line">PANDEY</span>
+        </h1>
+        <p class="hero-sub">ENGINEERING IDEAS INTO REALITY.</p>
+        <p class="hero-meta">Computer Science Student | Developer | AI Enthusiast</p>
+      </div>
+      <a href="#identity" class="scroll-cue" aria-label="Scroll to identity section"><span></span></a>
     </section>
 
-    <!-- 01 Identity -->
-    <section class="panel" id="identity" tabindex="-1" aria-labelledby="identity-h">
-      <h2 class="panel-title" id="identity-h">Identity</h2>
-      <article class="card" data-tilt>
-        <dl class="facts">
-          <div><dt>Name</dt><dd>Suraj Srivastava</dd></div>
-          <div><dt>Education</dt><dd>B.Tech, Computer Science Engineering</dd></div>
-          <div><dt>Specialization</dt><dd>Data Science and Artificial Intelligence</dd></div>
-          <div><dt>Status</dt><dd>Second-year undergraduate</dd></div>
-        </dl>
-        <p class="reveal-text">I am drawn to the places where software meets real decisions: a model that explains its answer, a dataset that reveals a pattern, a small tool that saves someone an hour.</p>
-        <ul class="chips" aria-label="Interests">
-          <li>Programming</li><li>Artificial Intelligence</li><li>Web Development</li><li>Problem Solving</li><li>Practical digital products</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- 02 Journey -->
-    <section class="panel" id="journey" tabindex="-1" aria-labelledby="journey-h">
-      <h2 class="panel-title" id="journey-h">Journey</h2>
-      <ol class="timeline">
-        <li class="reveal">
-          <h3>B.Tech, Computer Science Engineering</h3>
-          <p>Current degree. Second-year undergraduate.</p>
-        </li>
-        <li class="reveal">
-          <h3>Specialization: Data Science and AI</h3>
-          <p>Building foundations in data analysis, machine learning and applied AI.</p>
-        </li>
-        <li class="reveal">
-          <h3>[Milestone: add a date and title]</h3>
-          <p>[Describe a learning or development milestone here.]</p>
-        </li>
-      </ol>
+    <!-- 02 Identity -->
+    <section class="scene" id="identity" data-scene="identity">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">02 — Identity</p>
+          <h2 class="scene-title">NOT JUST A STUDENT.<br><span class="accent">A BUILDER IN PROGRESS.</span></h2>
+        </div>
+        <div class="identity-body">
+          <div class="avatar-placeholder" aria-label="Profile image placeholder"><span>RP</span></div>
+          <h3 class="reveal-up">Rishakt Pandey</h3>
+          <p class="reveal-up">B.Tech Computer Science and Engineering<br>Specialization: Data Science &amp; Artificial Intelligence</p>
+          <p class="reveal-up muted">Second-year undergraduate student from Lucknow, India.</p>
+          <p class="reveal-up">I explore technology through experimentation, problem-solving, and building digital products. My interests lie in software engineering, artificial intelligence, and creating experiences that combine technology with creativity.</p>
+        </div>
+      </div>
     </section>
 
     <!-- 03 Capabilities -->
-    <section class="panel" id="capabilities" tabindex="-1" aria-labelledby="cap-h">
-      <h2 class="panel-title" id="cap-h">Capabilities</h2>
-      <div class="constellation" id="constellation">
-        <div class="cluster" data-cluster>
-          <h3>Programming</h3>
-          <ul><li>C</li><li>C++</li><li>Python</li><li>JavaScript</li></ul>
-        </div>
-        <div class="cluster" data-cluster>
-          <h3>Web Development</h3>
-          <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React.js</li></ul>
-        </div>
-        <div class="cluster" data-cluster>
-          <h3>Tools</h3>
-          <ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>Excel</li></ul>
-        </div>
-        <div class="cluster" data-cluster>
-          <h3>AI and Data</h3>
-          <ul><li>Artificial Intelligence</li><li>Data Science</li><li>Python-based development</li></ul>
+    <section class="scene" id="capabilities" data-scene="capabilities">
+      <div class="container">
+        <p class="eyebrow">03 — Capabilities</p>
+        <h2 class="scene-title">Constellation of skills.</h2>
+        <div class="constellation" id="constellation"></div>
+        <div class="node-panel" id="nodePanel" aria-live="polite">
+          <p class="panel-title" id="panelTitle">Hover a node</p>
+          <p class="panel-body" id="panelBody">Explore the constellation to see how each skill connects.</p>
         </div>
       </div>
-      <p class="note">Hover a cluster to isolate it. No proficiency levels are shown.</p>
     </section>
 
-    <!-- 04 Project archive -->
-    <section class="panel" id="archive" tabindex="-1" aria-labelledby="archive-h">
-      <h2 class="panel-title" id="archive-h">Project Archive</h2>
-      <ul class="archive">
-        <li>
-          <button class="project magnetic" type="button" data-project="smart">
-            <span class="project-name">Smart Student Companion</span>
-            <span class="project-type">AI study platform</span>
-          </button>
-        </li>
-        <li>
-          <button class="project magnetic" type="button" data-project="medikiosk">
-            <span class="project-name">MediKiosk</span>
-            <span class="project-type">Clinical intake concept</span>
-          </button>
-        </li>
-        <li>
-          <button class="project magnetic" type="button" data-project="portfolio">
-            <span class="project-name">Personal Portfolio</span>
-            <span class="project-type">Experimental developer site</span>
-          </button>
-        </li>
-      </ul>
-    </section>
+    <!-- 04 Experiments -->
+    <section class="scene experiments" id="experiments" data-scene="experiments">
+      <div class="experiments-track" id="experimentsTrack">
 
-    <!-- 05 Connect -->
-    <section class="panel" id="connect" tabindex="-1" aria-labelledby="connect-h">
-      <h2 class="panel-title" id="connect-h">Connect</h2>
-      <div class="terminal">
-        <p class="term-heading" id="termHeading" aria-live="polite"></p>
-        <ul class="links">
-          <li><a class="magnetic" href="mailto:your.email@example.com">your.email@example.com <small>[placeholder]</small></a></li>
-          <li><a class="magnetic" href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub <small>[placeholder]</small></a></li>
-          <li><a class="magnetic" href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn <small>[placeholder]</small></a></li>
-        </ul>
-        <form class="msg" id="msgForm" novalidate>
-          <label>Name <input name="name" type="text" required autocomplete="name"></label>
-          <label>Email <input name="email" type="email" required autocomplete="email"></label>
-          <label>Message <textarea name="message" rows="4" required></textarea></label>
-          <button class="magnetic send" type="submit">Send transmission</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
+        <article class="exhibit">
+          <p class="eyebrow">Experiment 01</p>
+          <h3>Smart Student Companion</h3>
+          <p>An AI-powered student productivity platform.</p>
+          <ul class="tags">
+            <li>PDF notes uploader</li>
+            <li>AI summarization</li>
+            <li>AI quiz generation</li>
+            <li>Doubt solving</li>
+            <li>Study planning</li>
+          </ul>
+          <div class="links">
+            <a href="#" data-placeholder="Add GitHub URL">GitHub</a>
+            <a href="#" data-placeholder="Add live demo URL">Live Demo</a>
+          </div>
+        </article>
+
+        <article class="exhibit">
+          <p class="eyebrow">Experiment 02</p>
+          <h3>MEDIKIOSK</h3>
+          <p>A digital clinical intake interface concept designed to simplify patient information collection.</p>
+          <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+          <div class="links">
+            <a href="#" data-placeholder="Add GitHub URL">GitHub</a>
+            <a href="#" data-placeholder="Add live demo URL">Live Demo</a>
+          </div>
+        </article>
+
+        <article class="exhibit">
+          <p class="eyebrow">Experiment 03</p>
+          <h3>Personal Portfolio</h3>
+          <p>An experimental portfolio built with HTML, CSS and JavaScript.</p>
+          <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Three.js</li>
+            <li>GSAP</li>
+          </ul>
+          <div class="links">
+            <a href="#" data-placeholder="Add GitHub URL">GitHub</a>
+            <a href="#" data-placeholder="Add live demo URL">Live Demo</a>
+          </div>
+        </article>
+
       </div>
     </section>
+
+    <!-- 05 Journey -->
+    <section class="scene" id="journey" data-scene="journey">
+      <div class="container">
+        <p class="eyebrow">05 — Journey</p>
+        <h2 class="scene-title">The evolution.</h2>
+        <div class="journey-track">
+          <div class="journey-line"></div>
+          <div class="journey-orb" id="journeyOrb" aria-hidden="true"></div>
+          <ol class="milestones">
+            <li><h3>Discovering programming</h3></li>
+            <li><h3>Beginning B.Tech</h3></li>
+            <li><h3>Learning C and C++</h3></li>
+            <li><h3>Exploring DSA</h3></li>
+            <li><h3>Building web applications</h3></li>
+            <li><h3>Exploring AI and Data Science</h3></li>
+            <li><h3>Developing real-world projects</h3></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Contact -->
+    <section class="scene contact" id="contact" data-scene="contact">
+      <div class="container">
+        <p class="eyebrow">06 — Contact</p>
+        <h2 class="scene-title">EVERY GREAT IDEA<br>STARTS SOMEWHERE.</h2>
+        <p class="scene-sub">LET'S CREATE SOMETHING IMPOSSIBLE.</p>
+
+        <div class="contact-grid">
+          <ul class="contact-links">
+            <li>
+              <a href="mailto:your.email@example.com">Email: your.email@example.com</a>
+            </li>
+            <li>
+              <a href="#" data-placeholder="Add GitHub URL">GitHub: [your-github-url]</a>
+            </li>
+            <li>
+              <a href="#" data-placeholder="Add LinkedIn URL">LinkedIn: [your-linkedin-url]</a>
+            </li>
+          </ul>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="field">
+              <input id="name" name="name" type="text" placeholder=" " autocomplete="name">
+              <label for="name">Name</label>
+              <small class="error" id="nameError"></small>
+            </div>
+
+            <div class="field">
+              <input id="email" name="email" type="email" placeholder=" " autocomplete="email">
+              <label for="email">Email</label>
+              <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="field">
+              <textarea id="message" name="message" rows="4" placeholder=" "></textarea>
+              <label for="message">Message</label>
+              <small class="error" id="messageError"></small>
+            </div>
+
+            <button type="submit" class="send-btn magnetic" id="sendBtn">
+              <span>Send transmission</span>
+            </button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <p class="placeholder-note">Validation only. Connect a form backend (for example Formspree) to deliver messages.</p>
+          </form>
+        </div>
+
+        <p class="closing">THANK YOU FOR EXPLORING MY WORLD.</p>
+        <p class="footer-line">&copy; <span id="year"></span> Rishakt Pandey</p>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Floating command dock -->
-  <nav class="dock" aria-label="Sections">
-    <a href="#home" data-target="home">Home</a>
-    <a href="#identity" data-target="identity">Identity</a>
-    <a href="#journey" data-target="journey">Journey</a>
-    <a href="#capabilities" data-target="capabilities">Capabilities</a>
-    <a href="#archive" data-target="archive">Archive</a>
-    <a href="#connect" data-target="connect">Connect</a>
-  </nav>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
 
-  <!-- Project overlay -->
-  <div class="overlay" id="overlay" hidden>
-    <div class="overlay-inner" role="dialog" aria-modal="true" aria-labelledby="pTitle">
-      <button class="close" id="closeProject" type="button">Close</button>
-      <p class="p-type" id="pType"></p>
-      <h2 id="pTitle"></h2>
-      <p class="p-desc" id="pDesc"></p>
-      <h3>Features</h3>
-      <ul class="p-features" id="pFeatures"></ul>
-      <h3>Stack</h3>
-      <p id="pStack" class="p-stack"></p>
-      <div class="p-links">
-        <span>Live demo: [add link]</span>
-        <span>GitHub: [add link]</span>
-      </div>
-    </div>
-  </div>
+  <!-- Vendors -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <script src="script.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
 </html>
